@@ -15,8 +15,4 @@ class ChooseDeviceController extends GetxController {
   OnConnect(DiscoveredDevice de) async {
     await DeviceService.to.onConnectClick(de);
   }
-
-  
-
-  
 }

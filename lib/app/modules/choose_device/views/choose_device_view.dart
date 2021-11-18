@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth/app/services/device_service.dart';
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
@@ -23,12 +25,15 @@ class ChooseDeviceView extends GetView<ChooseDeviceController> {
       body: Center(
         child: Obx(() => DeviceService.to.isScanning.value
             ? CircularProgressIndicator()
-            : ListView.builder(
-                itemCount: DeviceService.to.DiscoveredDevices.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return DeviceList(DeviceService.to.DiscoveredDevices[index]);
-                },
-              )),
+            : DeviceService.to.DiscoveredDevices.isEmpty
+                ? Text('Scan to Show Devices')
+                : ListView.builder(
+                    itemCount: DeviceService.to.DiscoveredDevices.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return DeviceList(
+                          DeviceService.to.DiscoveredDevices[index]);
+                    },
+                  )),
       ),
     );
   }
