@@ -9,5 +9,5 @@ This project is a starting point for a Flutter application.
 Clone this Project and Start using , included all Getx initial Functions 
 and few important Widgets , also added required dependenices for Android and Ios
 
-Pull Request are Welcomed to Make this demo as a Super cool and easy starting Template
-for Getx users 
+You Guys can Contribure to  Make this demo , a Super cool and easy starting Template
+for Getx users with Flutter_reactive_ble
